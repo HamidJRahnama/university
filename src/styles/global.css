@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+.custom_h4 {
+  margin-bottom: 20px;
+}
+.custom_hr {
+  background-color: #a7a7a7;
+  height: 1px;
+  border-radius: 10px;
+  margin: 10px auto;
+}
+.demo1 {
+  position: relative;
+}
+label {
+  color: #a1a1a1;
+}
