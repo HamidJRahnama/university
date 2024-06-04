@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import StudyMore from "./StudyMore";
 import DismissalMessage from "./DismissalMessage";
+import PassMessage from "./PassMessage";
 
 const Form = ({ handleClick }) => {
   const studentInitialState = {
@@ -14,10 +15,12 @@ const Form = ({ handleClick }) => {
     credit: "",
     grade: "",
   };
+
   const [student, setStudent] = useState(studentInitialState);
   const [studentStatus, setStudentStatus] = useState(studentStatusInitialState);
   const [dismissal, setDismissal] = useState(false);
   const [isStudyMore, setIsStudyMore] = useState(false);
+  const [isShowMudal, setIsShowMudal] = useState(false);
   console.log(studentStatus);
   const handleStudent = (text, input) => {
     setStudent((prevState) => ({ ...prevState, [input]: text.target.value }));
@@ -32,6 +35,7 @@ const Form = ({ handleClick }) => {
   let setEducationalState = (educationalState) => {
     handleClick(educationalState, studentStatus.educationalState, student);
   };
+  console.log(isShowMudal);
   let handleSubmit = (e) => {
     e.preventDefault();
 
@@ -42,6 +46,9 @@ const Form = ({ handleClick }) => {
         } else {
           if (studentStatus.credit >= 72 && studentStatus.grade >= 10) {
             console.log("[Form.js] ==> pass");
+            console.log(isShowMudal);
+
+            setIsShowMudal(true);
           } else {
             setEducationalState("associiateDegree");
             setIsStudyMore(true);
@@ -54,6 +61,10 @@ const Form = ({ handleClick }) => {
         } else {
           if (studentStatus.credit >= 68 && studentStatus.grade >= 12) {
             console.log("[Form.js] ==> pass");
+            console.log("[Form.js] ==> pass");
+            console.log(isShowMudal);
+
+            setIsShowMudal(true);
           } else {
             setEducationalState("undergraduate");
             setIsStudyMore(true);
@@ -66,6 +77,10 @@ const Form = ({ handleClick }) => {
         } else {
           if (studentStatus.credit >= 32 && studentStatus.grade >= 14) {
             console.log("[Form.js] ==> pass");
+            console.log("[Form.js] ==> pass");
+            console.log(isShowMudal);
+
+            setIsShowMudal(true);
           } else {
             setEducationalState("phd");
             setIsStudyMore(true);
@@ -212,6 +227,12 @@ const Form = ({ handleClick }) => {
                   </button>
                 </div>
               </div>
+              <PassMessage
+                isShow={isShowMudal}
+                student={student}
+                studentStatus={studentStatus}
+                handleClose={() => setIsShowMudal(false)}
+              />
             </form>
           )}
         </>

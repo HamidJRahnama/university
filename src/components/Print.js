@@ -4,6 +4,7 @@ const Print = ({ creditTableInfo, studentInfo }) => {
   let newCreditTableInfo = creditTableInfo.filter((creditTable) =>
     creditTable.isPicked === true ? creditTable : null
   );
+
   return (
     <>
       <div className="row">
