@@ -1,34 +1,13 @@
 import React from "react";
 
-import { useState } from "react";
+import Modal from "react-bootstrap/Modal";
 import { Col, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
 import { Link } from "react-router-dom";
 
 const PassMessage = ({ isShow, student, studentStatus, handleClose }) => {
-  //     name: "",
-  //     family: "",
-  //     studentNumber: "",
-  //   };
-  //   const studentStatusInitialState = {
-  //     educationalState: "کاردانی",
-  //     semester: "",
-  //     credit: "",
-  //     grade: "",
-  //   };
-  const [show, setShow] = useState(isShow);
-  console.log(studentStatus);
-
-  //   const handleClose = () => setShow(false);
-  //   const handleShow = () => setShow(true);
-
   return (
     <>
-      {/* <Button variant="primary" onClick={handleShow}>
-        Launch demo modal
-      </Button> */}
-
       <Modal show={isShow} onHide={handleClose} centered>
         <div className=" p-1">
           <Modal.Title>شما پاس شدید</Modal.Title>

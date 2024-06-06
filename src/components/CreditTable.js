@@ -26,13 +26,13 @@ const CreditTable = (props) => {
               <td>{creditTable.courseCredit}</td>
               <td>{creditTable.professor}</td>
               <td>
-                <label class="switch">
+                <label className="switch">
                   <input
                     onClick={() => data.handleClick(creditTable.id)}
                     type="checkbox"
                     checked={creditTable.isPicked}
                   />
-                  <span class="slider round"></span>
+                  <span className="slider round"></span>
                 </label>
               </td>
             </tr>

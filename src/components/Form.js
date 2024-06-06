@@ -21,7 +21,6 @@ const Form = ({ handleClick }) => {
   const [dismissal, setDismissal] = useState(false);
   const [isStudyMore, setIsStudyMore] = useState(false);
   const [isShowMudal, setIsShowMudal] = useState(false);
-  console.log(studentStatus);
   const handleStudent = (text, input) => {
     setStudent((prevState) => ({ ...prevState, [input]: text.target.value }));
   };
@@ -35,7 +34,6 @@ const Form = ({ handleClick }) => {
   let setEducationalState = (educationalState) => {
     handleClick(educationalState, studentStatus.educationalState, student);
   };
-  console.log(isShowMudal);
   let handleSubmit = (e) => {
     e.preventDefault();
 
@@ -45,9 +43,6 @@ const Form = ({ handleClick }) => {
           setDismissal(!dismissal);
         } else {
           if (studentStatus.credit >= 72 && studentStatus.grade >= 10) {
-            console.log("[Form.js] ==> pass");
-            console.log(isShowMudal);
-
             setIsShowMudal(true);
           } else {
             setEducationalState("associiateDegree");
@@ -60,10 +55,6 @@ const Form = ({ handleClick }) => {
           setDismissal(!dismissal);
         } else {
           if (studentStatus.credit >= 68 && studentStatus.grade >= 12) {
-            console.log("[Form.js] ==> pass");
-            console.log("[Form.js] ==> pass");
-            console.log(isShowMudal);
-
             setIsShowMudal(true);
           } else {
             setEducationalState("undergraduate");
@@ -76,10 +67,6 @@ const Form = ({ handleClick }) => {
           setDismissal(!dismissal);
         } else {
           if (studentStatus.credit >= 32 && studentStatus.grade >= 14) {
-            console.log("[Form.js] ==> pass");
-            console.log("[Form.js] ==> pass");
-            console.log(isShowMudal);
-
             setIsShowMudal(true);
           } else {
             setEducationalState("phd");
